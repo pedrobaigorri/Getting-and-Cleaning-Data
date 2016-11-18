@@ -146,3 +146,28 @@ First modified a little bit the names of the variables to make them more underst
 
 ### Step 5 - From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
+I use the function agreggate to calculate the avg of each of the columns per each activity and subject. The code that performs this operation is:
+
+```
+    agg_train_test <- aggregate(train_test, list(train_test$subject, train_test$activity), FUN= mean)
+    
+    # remove the replicated variables subject & list
+    agg_train_test <- select(agg_train_test, -activity)
+    agg_train_test <- select(agg_train_test, -subject)
+    
+    #rename grouping variables to subject & activity
+    colnames(agg_train_test)[1] <- "subject"
+    colnames(agg_train_test)[2] <- "activity"
+
+    head(agg_train_test)
+    dim(agg_train_test) # 180 x 68
+```
+
+Finally I wrote the dataset to the final file:
+
+``` 
+write.table(agg_train_test, "tidy_dataset.txt", row.names = F)
+```
+
+
+

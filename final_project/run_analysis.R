@@ -5,7 +5,7 @@
 ##
 ## Author: Pedro A. Alonso Baigorri
 ##############################################################################
-setwd("D://Pedro//TID//BI4TD//DATA SCIENCE//COURSERA//Code//Data Cleaning")
+#setwd("D://Pedro//TID//BI4TD//DATA SCIENCE//COURSERA//Code//Data Cleaning")
 
 # Load required libraries
 library(dplyr)

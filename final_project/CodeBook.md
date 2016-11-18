@@ -36,13 +36,32 @@ Following the requirements of the final assignment the transformations performed
 
 After loading the files into R, I used the functions rbind to join the datasets of train and tests.
 
-I performed this operation for the datasets and also to the labels.
+I performed this operation for the datasets the labels and also the subjects data.
 
-In addition I added to both datasets two columns of index, to ensure that the position of the rows can be stored during the rest of transformation processes. The creation of this indexes columns was done with the following code:
-
-```
-label_train_test$index <- seq(1:nrow(label_train_test))
+The result was the creation of three datasets with the following dimensions:
 
 ```
+    train_test <- rbind(train, test)
+    dim(train_test) # 10299 x 561
+    dim(test)[1] + dim(train)[1] # 10299
+    
+    label_train_test <- rbind(labelTrain, labelTest)
+    dim(label_train_test) # 10299 x 1
+
+    subject_train_test <- rbind(subjectTrain, subjectTest)
+    dim(subject_train_test) # 10299 x 1
+
+```
+
+In addition I added to all datasets two columns of index, to ensure that the position of the rows can be stored during the rest of transformation processes. The creation of this indexes columns was done with the following code:
+
+```
+  train_test$index <- seq(1:nrow(train_test))
+  label_train_test$index <- seq(1:nrow(label_train_test))
+  subject_train_test$index <- seq(1:nrow(subject_train_test))
+
+```
+### Step 2 - Extracts only the measurements on the mean and standard deviation for each measurement
+
 
 

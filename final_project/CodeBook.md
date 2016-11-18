@@ -40,9 +40,9 @@ I performed this operation for the datasets and also to the labels.
 
 In addition I added to both datasets two columns of index, to ensure that the position of the rows can be stored during the rest of transformation processes. The creation of this indexes columns was done with the following code:
 
-<<->>
+``
 label_train_test$index <- seq(1:nrow(label_train_test))
 
-@
+``
 
 

@@ -3,7 +3,7 @@
 
 This is the codebook of the final dataset created for the final assigment of the Getting-and-Cleaning data course.
 
-## Introduction data
+## Introduction
 
 The origin data is the result of the project performed by the UCI for monitoring the Human Activity through the use of Smartphones. Complete information about the project can be obtained in their website: 
 
@@ -33,5 +33,16 @@ The following files are available for the train and test data. Their description
 Following the requirements of the final assignment the transformations performed on the dataset have been the following:
 
 ### Step 1 - Merges the training and the test sets to create one data set.
+
+After loading the files into R, I used the functions rbind to join the datasets of train and tests.
+
+I performed this operation for the datasets and also to the labels.
+
+In addition I added to both datasets two columns of index, to ensure that the position of the rows can be stored during the rest of transformation processes. The creation of this indexes columns was done with the following code:
+
+<<->>
+label_train_test$index <- seq(1:nrow(label_train_test))
+
+@
 
 

@@ -192,7 +192,7 @@ library(stringr)
     dim(agg_train_test) # 180 x 68
      
      # writing it to a file
-     write.table(agg_train_test, "./data/tidy.txt", row.names = F)
+     write.table(agg_train_test, "./data/tidy_dataset.txt", row.names = F)
 
 }
 
